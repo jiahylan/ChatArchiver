@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatArchiver</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>ChatArchiver</h1>
+    
+    <div id="page-info" class="section">
+      <h2>当前页面</h2>
+      <div id="url" class="url-display"></div>
+      <div class="badges">
+        <span id="platform" class="platform-badge"></span>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>步骤1：复制对话内容</h2>
+      <p class="hint">在对话页面点击"Copy Text"或"复制"按钮</p>
+    </div>
+    
+    <div class="section">
+      <h2>步骤2：读取剪贴板</h2>
+      <button id="read-clipboard-btn" class="btn-secondary">读取剪贴板内容</button>
+      
+      <div id="preview-container" class="hidden">
+        <h3>预览：</h3>
+        <div id="clipboard-preview" class="preview-content"></div>
+      </div>
+    </div>
+    
+    <div id="save-form" class="section">
+      <h2>步骤3：保存对话</h2>
+      
+      <div class="form-group">
+        <label for="title">标题</label>
+        <input type="text" id="title" placeholder="输入对话标题">
+      </div>
+      
+      <div class="form-group">
+        <label for="tags">标签</label>
+        <input type="text" id="tags" placeholder="用逗号分隔多个标签">
+      </div>
+      
+      <div class="form-group">
+        <label for="category">分类</label>
+        <select id="category">
+          <option value="uncategorized">未分类</option>
+          <option value="work">工作</option>
+          <option value="study">学习</option>
+          <option value="personal">个人</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="notes">备注（可选）</label>
+        <textarea id="notes" placeholder="添加备注..." rows="3"></textarea>
+      </div>
+      
+      <button id="save-btn" class="btn-primary" disabled>保存对话</button>
+    </div>
+    
+    <div id="status" class="status hidden"></div>
+    
+    <div class="section">
+      <button id="open-ui-btn" class="btn-secondary">打开管理界面</button>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
